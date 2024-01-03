@@ -1,0 +1,33 @@
+name: Build and Deploy Flutter Web to Vercel
+
+on:
+  push:
+    branches:
+      - main  # 或你希望触发构建的分支
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.10
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build Flutter Web
+        run: flutter build web --release
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          vercel_project_id: ${{ secrets.YOUR_VERCEL_PROJECT_ID }}
+          vercel_org_id: ${{ secrets.YOUR_VERCEL_ORG_ID }}

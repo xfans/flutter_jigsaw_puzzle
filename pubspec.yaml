@@ -1,5 +1,5 @@
-name: game_template
-description: A mobile game built in Flutter.
+name: flutter_jigsaw_puzzle
+description: A jigsaw puzzle game
 
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
