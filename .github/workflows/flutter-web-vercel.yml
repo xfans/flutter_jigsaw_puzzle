@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - master  # 或你希望触发构建的分支
-
+permissions:
+      pull-requests: write
+      
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
