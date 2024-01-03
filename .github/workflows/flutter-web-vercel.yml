@@ -3,9 +3,12 @@ name: Build and Deploy Flutter Web to Vercel
 on:
   push:
     branches:
-      - master  # 或你希望触发构建的分支
+      - master
+      
 permissions:
-      pull-requests: write
+  contents: write
+  deployments: write
+  pull-requests: write
       
 jobs:
   build-and-deploy:
@@ -33,3 +36,4 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-project-id: ${{ secrets.YOUR_VERCEL_PROJECT_ID }}
           vercel-org-id: ${{ secrets.YOUR_VERCEL_ORG_ID }}
+          working-directory: ./build/web
