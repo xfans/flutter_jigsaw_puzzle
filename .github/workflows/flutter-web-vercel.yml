@@ -3,7 +3,7 @@ name: Build and Deploy Flutter Web to Vercel
 on:
   push:
     branches:
-      - main  # 或你希望触发构建的分支
+      - master  # 或你希望触发构建的分支
 
 jobs:
   build-and-deploy:
