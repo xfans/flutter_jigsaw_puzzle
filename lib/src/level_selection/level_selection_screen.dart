@@ -4,22 +4,16 @@
 
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cherry_toast/cherry_toast.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_jigsaw_puzzle/src/http/api.dart';
 import 'package:flutter_jigsaw_puzzle/src/http/dio_client.dart';
 import 'package:flutter_jigsaw_puzzle/src/level_selection/piece_image.dart';
-import 'package:flutter_jigsaw_puzzle/src/settings/Version.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../style/palette.dart';
-import '../utils/sp_util.dart';
-import 'jigsaw_category.dart';
 import 'jigsaw_grid_item.dart';
 import 'jigsaw_info.dart';
 
