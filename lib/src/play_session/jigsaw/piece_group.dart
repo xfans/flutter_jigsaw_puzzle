@@ -1,4 +1,4 @@
-import 'package:game_template/src/play_session/jigsaw/piece_component.dart';
+import 'package:flutter_jigsaw_puzzle/src/play_session/jigsaw/piece_component.dart';
 
 ///
 /// 使用组去管理所有碎片，在一起的碎片都属于同一个组

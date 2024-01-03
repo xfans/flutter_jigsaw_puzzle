@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:game_template/src/level_selection/jigsaw_info.dart';
-import 'package:game_template/src/level_selection/piece_image.dart';
+import 'package:flutter_jigsaw_puzzle/src/level_selection/jigsaw_info.dart';
+import 'package:flutter_jigsaw_puzzle/src/level_selection/piece_image.dart';
 import 'package:provider/provider.dart';
 
 import '../style/palette.dart';

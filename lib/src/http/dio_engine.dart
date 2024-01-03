@@ -4,7 +4,7 @@ import 'dart:math';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
-import 'package:game_template/src/http/api.dart';
+import 'package:flutter_jigsaw_puzzle/src/http/api.dart';
 
 import 'http_engine.dart';
 

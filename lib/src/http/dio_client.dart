@@ -1,4 +1,4 @@
-import 'package:game_template/src/http/http_engine.dart';
+import 'package:flutter_jigsaw_puzzle/src/http/http_engine.dart';
 
 import 'dio_engine.dart';
 
