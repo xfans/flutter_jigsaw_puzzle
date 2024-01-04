@@ -50,3 +50,10 @@ jobs:
           # Optional: Switch what branch you are publishing to.
           # By default this will be the branch which triggered this workflow
           branch: master
+        id: publish
+      - name: Outputs
+        run: |
+          echo "ID: ${{ steps.publish.outputs.id }}"
+          echo "URL: ${{ steps.publish.outputs.url }}"
+          echo "Environment: ${{ steps.publish.outputs.environment }}"
+          echo "Alias: ${{ steps.publish.outputs.alias }}"
