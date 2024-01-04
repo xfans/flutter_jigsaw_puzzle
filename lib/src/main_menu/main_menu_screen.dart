@@ -68,6 +68,13 @@ class MainMenuScreen extends StatelessWidget {
               child: const Text('Settings'),
             ),
             _gap,
+            FilledButton(
+              onPressed: (){
+                launchUrlString('https://github.com/xfans/flutter_jigsaw_puzzle');
+              },
+              child: const Text('Github'),
+            ),
+            _gap,
             Padding(
               padding: const EdgeInsets.only(top: 32),
               child: ValueListenableBuilder<bool>(
