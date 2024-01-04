@@ -13,6 +13,7 @@ import 'package:go_router/go_router.dart';
 import 'package:logging/logging.dart' hide Level;
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../games_services/score.dart';
 import '../settings/settings.dart';
 import '../style/palette.dart';
@@ -62,6 +63,16 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                 color: palette.textColor),
           ),
           actions: [
+            InkResponse(
+              onTap: () {
+                launchUrlString('https://github.com/xfans/flutter_jigsaw_puzzle');
+              },
+              child: Icon(
+                Icons.code,
+                size: 60.sp,
+                color: palette.textColor,
+              ),
+            ),
             InkResponse(
               onTap: () {
                 showReset();

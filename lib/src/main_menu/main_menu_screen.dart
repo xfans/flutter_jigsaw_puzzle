@@ -47,6 +47,17 @@ class MainMenuScreen extends StatelessWidget {
                         'Photos provided by Pexels'
                     ),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: InkWell(
+                    onTap: () {
+                      launchUrlString('https://github.com/xfans/flutter_jigsaw_puzzle');
+                    },
+                    child: Text(
+                        'https://github.com/xfans/flutter_jigsaw_puzzle'
+                    ),
+                  ),
                 )
               ],
             ),
@@ -66,13 +77,6 @@ class MainMenuScreen extends StatelessWidget {
             FilledButton(
               onPressed: () => GoRouter.of(context).push('/settings'),
               child: const Text('Settings'),
-            ),
-            _gap,
-            FilledButton(
-              onPressed: (){
-                launchUrlString('https://github.com/xfans/flutter_jigsaw_puzzle');
-              },
-              child: const Text('Github'),
             ),
             _gap,
             Padding(
