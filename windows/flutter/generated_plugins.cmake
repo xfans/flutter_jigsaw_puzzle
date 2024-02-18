@@ -5,7 +5,6 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   audioplayers_windows
   connectivity_plus
-  image_compression_flutter
   rive_common
   url_launcher_windows
 )

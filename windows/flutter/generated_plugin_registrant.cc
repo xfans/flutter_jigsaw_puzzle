@@ -8,7 +8,6 @@
 
 #include <audioplayers_windows/audioplayers_windows_plugin.h>
 #include <connectivity_plus/connectivity_plus_windows_plugin.h>
-#include <image_compression_flutter/image_compression_flutter_plugin.h>
 #include <rive_common/rive_plugin.h>
 #include <url_launcher_windows/url_launcher_windows.h>
 
@@ -17,8 +16,6 @@ void RegisterPlugins(flutter::PluginRegistry* registry) {
       registry->GetRegistrarForPlugin("AudioplayersWindowsPlugin"));
   ConnectivityPlusWindowsPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("ConnectivityPlusWindowsPlugin"));
-  ImageCompressionFlutterPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("ImageCompressionFlutterPlugin"));
   RivePluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("RivePlugin"));
   UrlLauncherWindowsRegisterWithRegistrar(

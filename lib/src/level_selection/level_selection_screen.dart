@@ -91,22 +91,24 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
               icon: Icon(Icons.settings)),
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.only(left: 20.w, right: 20.w),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-                child: Center(
-              child: Text(
-                'Photos provided by Pexels',
-              ),
-            )),
-            buildPagedGridView(),
-            SliverToBoxAdapter(
-                child: SizedBox(
-              height: 30.h,
-            ))
-          ],
+      body: Center(
+        child: Container(
+          width: 0.7.sw,
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                  child: Center(
+                child: Text(
+                  'Photos provided by Pexels',
+                ),
+              )),
+              buildPagedGridView(),
+              SliverToBoxAdapter(
+                  child: SizedBox(
+                height: 30.h,
+              ))
+            ],
+          ),
         ),
       ),
     );
