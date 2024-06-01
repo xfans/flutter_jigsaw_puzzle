@@ -200,6 +200,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       btnOkColor: Palette().btnOkColor,
       context: context,
       animType: AnimType.scale,
+      width: 0.8.sw,
       dialogType: DialogType.noHeader,
       body: StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
@@ -207,11 +208,6 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
             alignment: Alignment.center,
             child: Column(
               children: [
-                Container(
-                  width: 0.6.sw,
-                  height: 0.6.sw,
-                  child: PieceImage(pictureUrl: item.smallimage),
-                ),
                 SizedBox(
                   height: 20.h,
                 ),
