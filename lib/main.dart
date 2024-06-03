@@ -41,7 +41,10 @@ Future<void> main() async {
         '${record.message}');
   });
   WidgetsFlutterBinding.ensureInitialized();
-
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeRight,
+    DeviceOrientation.landscapeLeft,
+  ]);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: []);
 
   if (!kIsWeb && (Platform.isIOS || Platform.isAndroid)) {
