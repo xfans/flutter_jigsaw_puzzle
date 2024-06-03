@@ -24,10 +24,10 @@ dependencies:
   flame: 1.8.1
   flame_audio: ^2.0.4
   infinite_scroll_pagination: ^4.0.0
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.3.1
   flutter_cache_manager: ^3.3.1
 #  flutter_image_compress: ^2.0.3
-  flutter_screenutil: ^5.8.4
+  flutter_screenutil: ^5.9.3
   card_swiper: ^2.0.4
   awesome_dialog: ^3.1.0
   lottie: ^2.4.0
