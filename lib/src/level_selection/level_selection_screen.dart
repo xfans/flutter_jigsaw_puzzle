@@ -80,7 +80,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
           'Real Puzzle',
           style: TextStyle(
               fontFamily: 'Permanent Marker',
-              fontSize: 40.sp,
+              fontSize: 20.sp,
               color: palette.textColor),
         ),
         actions: [

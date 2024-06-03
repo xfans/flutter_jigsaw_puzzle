@@ -59,7 +59,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
             'Real Puzzle',
             style: TextStyle(
                 fontFamily: 'Permanent Marker',
-                fontSize: 40.sp,
+                fontSize: 20.sp,
                 color: palette.textColor),
           ),
           actions: [
@@ -69,7 +69,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.code,
-                size: 60.sp,
+                size: 20.sp,
                 color: palette.textColor,
               ),
             ),
@@ -79,7 +79,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.restart_alt,
-                size: 60.sp,
+                size: 20.sp,
                 color: palette.textColor,
               ),
             ),
@@ -89,7 +89,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.image,
-                size: 60.sp,
+                size: 20.sp,
                 color: palette.textColor,
               ),
             ),
