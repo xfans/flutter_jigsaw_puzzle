@@ -14,7 +14,6 @@ dependencies:
     sdk: flutter
 
   audioplayers: ^6.0.0
-  cupertino_icons: ^1.0.8
   go_router: ^7.1.1
   logging: ^1.2.0
   provider: ^6.1.2
@@ -57,11 +56,6 @@ flutter:
     - assets/sfx/
     - assets/lottie/
     - assets/audio/
-
-  fonts:
-    - family: Permanent Marker
-      fonts:
-        - asset: assets/Permanent_Marker/PermanentMarker-Regular.ttf
 
 flutter_icons:
   android: true

@@ -79,7 +79,6 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         title: Text(
           'Real Puzzle',
           style: TextStyle(
-              fontFamily: 'Permanent Marker',
               fontSize: 20.sp,
               color: palette.textColor),
         ),
@@ -113,62 +112,6 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       ),
     );
   }
-
-  // SliverToBoxAdapter buildHeader() {
-  //   final palette = context.watch<Palette>();
-  //   return SliverToBoxAdapter(
-  //     child: Column(
-  //       children: [
-  //         Container(
-  //           height: 80.h,
-  //           child: ValueListenableBuilder(
-  //             valueListenable: categories,
-  //             builder: (context, value, child) {
-  //               return ListView.builder(
-  //                 scrollDirection: Axis.horizontal,
-  //                 itemCount: value.length,
-  //                 itemBuilder: (BuildContext context, int index) {
-  //                   return InkWell(
-  //                     onTap: () {
-  //                       _category_id = value[index].id;
-  //                       _pagingController.refresh();
-  //                       setState(() {});
-  //                     },
-  //                     child: Container(
-  //                       margin: EdgeInsets.only(right: 20.w, left: 20.w),
-  //                       child: Center(
-  //                         child: Container(
-  //                           decoration: BoxDecoration(
-  //                             border: Border(
-  //                               bottom: BorderSide(
-  //                                 color: _category_id == value[index].id
-  //                                     ? palette.btnOkColor
-  //                                     : Colors.transparent,
-  //                                 width: 3.h,
-  //                               ),
-  //                             ),
-  //                           ),
-  //                           child: Text(
-  //                             "${value[index].categoryEnname}",
-  //                             style: TextStyle(
-  //                                 fontFamily: 'Permanent Marker',
-  //                                 color: palette.textColor,
-  //                                 fontWeight: FontWeight.w200,
-  //                                 fontSize: 36.sp),
-  //                           ),
-  //                         ),
-  //                       ),
-  //                     ),
-  //                   );
-  //                 },
-  //               );
-  //             },
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 
   PagedSliverGrid<int, JigsawInfo> buildPagedGridView() {
     return PagedSliverGrid<int, JigsawInfo>(

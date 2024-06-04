@@ -32,7 +32,6 @@ class MainMenuScreen extends StatelessWidget {
                   'Puzzle Game',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontFamily: 'Permanent Marker',
                     fontSize: 55,
                     height: 1,
                   ),

@@ -31,7 +31,6 @@ class SettingsScreen extends StatelessWidget {
         title: Text(
           'Setting',
           style: TextStyle(
-              fontFamily: 'Permanent Marker',
               fontSize: 40.sp,
               color: palette.textColor),
         ),

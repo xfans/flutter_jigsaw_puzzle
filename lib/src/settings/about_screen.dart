@@ -59,7 +59,6 @@ class _AboutScreenState extends State<AboutScreen> {
         title: Text(
           'Setting',
           style: TextStyle(
-              fontFamily: 'Permanent Marker',
               fontSize: 40.sp,
               color: palette.textColor),
         ),
@@ -109,7 +108,6 @@ class _NameChangeLine extends StatelessWidget {
           children: [
             Text(title,
                 style: const TextStyle(
-                  fontFamily: 'Permanent Marker',
                   fontSize: 30,
                 )),
             const Spacer(),
@@ -118,7 +116,6 @@ class _NameChangeLine extends StatelessWidget {
               builder: (context, name, child) => Text(
                 '‘$name’',
                 style: const TextStyle(
-                  fontFamily: 'Permanent Marker',
                   fontSize: 30,
                 ),
               ),

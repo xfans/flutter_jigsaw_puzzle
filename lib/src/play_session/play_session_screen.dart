@@ -58,7 +58,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
           title: Text(
             'Real Puzzle',
             style: TextStyle(
-                fontFamily: 'Permanent Marker',
                 fontSize: 20.sp,
                 color: palette.textColor),
           ),
@@ -225,7 +224,6 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
                 Text(
                   'Time: ${score.formattedTime}',
                   style: TextStyle(
-                      fontFamily: 'Permanent Marker',
                       fontSize: 40.sp,
                       color: Palette().textColor),
                 )
