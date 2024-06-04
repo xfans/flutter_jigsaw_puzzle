@@ -31,7 +31,7 @@ class SettingsScreen extends StatelessWidget {
         title: Text(
           'Setting',
           style: TextStyle(
-              fontSize: 40.sp,
+              fontSize: 28.sp,
               color: palette.textColor),
         ),
       ),
@@ -118,7 +118,7 @@ class _SettingsLine extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    fontSize: 35.sp,
+                    fontSize: 20.sp,
                   ),
                 ),
               ),

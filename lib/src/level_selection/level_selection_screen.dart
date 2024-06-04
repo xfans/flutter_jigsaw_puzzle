@@ -78,9 +78,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         backgroundColor: palette.backgroundMain,
         title: Text(
           'Real Puzzle',
-          style: TextStyle(
-              fontSize: 20.sp,
-              color: palette.textColor),
+          style: TextStyle(fontSize: 28.sp, color: palette.textColor),
         ),
         actions: [
           IconButton(
@@ -92,7 +90,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       ),
       body: Center(
         child: Container(
-          width: 0.7.sw,
+          width: 0.9.sw,
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
@@ -120,10 +118,10 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       showNoMoreItemsIndicatorAsGridChild: true,
       pagingController: _pagingController,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 335 / 430,
+        childAspectRatio: 50 / 33,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        crossAxisCount: 2,
+        crossAxisCount: 4,
       ),
       builderDelegate: PagedChildBuilderDelegate<JigsawInfo>(
         itemBuilder: (context, item, index) => JigsawGridItem(
@@ -143,7 +141,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
       btnOkColor: Palette().btnOkColor,
       context: context,
       animType: AnimType.scale,
-      width: 0.8.sw,
+      width: 600.w,
       dialogType: DialogType.noHeader,
       body: StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
@@ -151,16 +149,16 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
             alignment: Alignment.center,
             child: Column(
               children: [
+                Text(
+                  'Pieces:',
+                  style: TextStyle(fontStyle: FontStyle.italic),
+                ),
                 SizedBox(
                   height: 20.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Pieces:',
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                    ),
                     buildSelectGridSize(2, _gridSizeValue, (v) {
                       setState(() {
                         _gridSizeValue = v;
@@ -181,7 +179,30 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
                         _gridSizeValue = v;
                       });
                     }),
+                  ],
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
                     buildSelectGridSize(7, _gridSizeValue, (v) {
+                      setState(() {
+                        _gridSizeValue = v;
+                      });
+                    }),
+                    buildSelectGridSize(8, _gridSizeValue, (v) {
+                      setState(() {
+                        _gridSizeValue = v;
+                      });
+                    }),
+                    buildSelectGridSize(9, _gridSizeValue, (v) {
+                      setState(() {
+                        _gridSizeValue = v;
+                      });
+                    }),
+                    buildSelectGridSize(10, _gridSizeValue, (v) {
                       setState(() {
                         _gridSizeValue = v;
                       });
@@ -193,12 +214,18 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
           );
         },
       ),
-      btnOkOnPress: () {
-        // final audioController = context.read<AudioController>();
-        // audioController.playSfx(SfxType.buttonTap);
-        item.gridSize = _gridSizeValue;
-        GoRouter.of(context).go('/play/loading/', extra: item);
-      },
+      btnOk: Center(
+        child: Container(
+          width: 100.w,
+          child: ElevatedButton(
+            onPressed: () {
+              item.gridSize = _gridSizeValue;
+              GoRouter.of(context).go('/play/loading/', extra: item);
+            },
+            child: Text("Start"),
+          ),
+        ),
+      ),
     )..show();
   }
 
@@ -209,6 +236,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
         f(num);
       },
       child: Container(
+        width: 100.w,
         padding: EdgeInsets.only(left: 20.w, right: 20.w),
         margin: EdgeInsets.only(left: 8.w, right: 8.w),
         decoration: BoxDecoration(
@@ -224,7 +252,7 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
             Text("${num * num}",
                 style: TextStyle(
                     fontWeight: FontWeight.w200,
-                    fontSize: 36.sp,
+                    fontSize: 26.sp,
                     color: Colors.white)),
             // return ListTile(
             //     title: Container(width:30.w,height:20.h,child: Text("${num * num}")),

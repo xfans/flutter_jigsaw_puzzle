@@ -58,7 +58,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
           title: Text(
             'Real Puzzle',
             style: TextStyle(
-                fontSize: 20.sp,
+                fontSize: 28.sp,
                 color: palette.textColor),
           ),
           actions: [
@@ -68,7 +68,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.code,
-                size: 20.sp,
+                size: 40.sp,
                 color: palette.textColor,
               ),
             ),
@@ -78,7 +78,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.restart_alt,
-                size: 20.sp,
+                size: 40.sp,
                 color: palette.textColor,
               ),
             ),
@@ -88,7 +88,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
               },
               child: Icon(
                 Icons.image,
-                size: 20.sp,
+                size: 40.sp,
                 color: palette.textColor,
               ),
             ),
@@ -151,6 +151,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
 
   void showReset() async {
     AwesomeDialog(
+        width: 400.h,
         dialogBackgroundColor: Palette().backgroundMain,
         btnOkColor: Palette().btnOkColor,
         context: context,
@@ -169,18 +170,21 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
   void showImage() async {
     File file = await DefaultCacheManager().getSingleFile(widget.level.image);
     AwesomeDialog(
+      width: 400.h,
       context: context,
       animType: AnimType.scale,
       headerAnimationLoop: false,
       dialogType: DialogType.noHeader,
       body: Center(
         child: Container(
-          margin: const EdgeInsets.all(20.0),
+          width: 400.h,
+          height: 300.h,
+          padding: EdgeInsets.all(20.h),
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.r),
           ),
-          child: Image.file(file),
+          child: Image.file(file, fit: BoxFit.contain),
         ),
       ),
     ).show();
