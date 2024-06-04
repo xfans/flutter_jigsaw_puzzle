@@ -57,14 +57,13 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
           backgroundColor: palette.backgroundMain,
           title: Text(
             'Real Puzzle',
-            style: TextStyle(
-                fontSize: 28.sp,
-                color: palette.textColor),
+            style: TextStyle(fontSize: 28.sp, color: palette.textColor),
           ),
           actions: [
             InkResponse(
               onTap: () {
-                launchUrlString('https://github.com/xfans/flutter_jigsaw_puzzle');
+                launchUrlString(
+                    'https://github.com/xfans/flutter_jigsaw_puzzle');
               },
               child: Icon(
                 Icons.code,
@@ -197,6 +196,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
       DateTime.now().difference(_startOfPlay),
     );
     AwesomeDialog(
+      width: 400.h,
       bodyHeaderDistance: 0,
       padding: const EdgeInsets.all(0),
       dismissOnTouchOutside: false,
@@ -204,38 +204,22 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
       animType: AnimType.scale,
       headerAnimationLoop: false,
       dialogType: DialogType.noHeader,
-      body: Stack(
-        children: [
-          Center(
-            child: Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.all(20.0),
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: FutureBuilder<File>(
-                      future: _getImage(),
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done &&
-                            snapshot.data != null) {
-                          return Image.file(snapshot.data!);
-                        }
-                        return Container();
-                      }),
-                ),
-                Text(
-                  'Time: ${score.formattedTime}',
-                  style: TextStyle(
-                      fontSize: 40.sp,
-                      color: Palette().textColor),
-                )
-              ],
-            ),
-          ),
-          Lottie.asset('assets/lottie/lottie_win.json'),
-        ],
+      body: Container(
+        width: 400.h,
+        height: 0.3.sh,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+                height: 0.2.sh,child: Center(child: Lottie.asset('assets/lottie/win.json'))),
+            Text(
+              'Time: ${score.formattedTime}',
+              style:
+                  TextStyle(fontSize: 16.sp, color: Palette().textColor),
+            )
+          ],
+        ),
       ),
       dialogBackgroundColor: Palette().backgroundMain,
       btnOkColor: Palette().btnOkColor,
