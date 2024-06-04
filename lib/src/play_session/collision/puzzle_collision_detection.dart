@@ -74,12 +74,11 @@ class PuzzleCollisionDetection<B extends Broadphase<ShapeHitbox>>
   static final _temporaryRaycastResult = RaycastResult<ShapeHitbox>();
 
   @override
-  RaycastResult<ShapeHitbox>? raycast(
-    Ray2 ray, {
-    double? maxDistance,
-    List<ShapeHitbox>? ignoreHitboxes,
-    RaycastResult<ShapeHitbox>? out,
-  }) {
+  RaycastResult<ShapeHitbox>? raycast(Ray2 ray,
+      {double? maxDistance,
+      bool Function(ShapeHitbox candidate)? hitboxFilter,
+      List<ShapeHitbox>? ignoreHitboxes,
+      RaycastResult<ShapeHitbox>? out}) {
     var finalResult = out?..reset();
     for (final item in items) {
       if (ignoreHitboxes?.contains(item) ?? false) {
@@ -103,16 +102,15 @@ class PuzzleCollisionDetection<B extends Broadphase<ShapeHitbox>>
   }
 
   @override
-  List<RaycastResult<ShapeHitbox>> raycastAll(
-    Vector2 origin, {
-    required int numberOfRays,
-    double startAngle = 0,
-    double sweepAngle = tau,
-    double? maxDistance,
-    List<Ray2>? rays,
-    List<ShapeHitbox>? ignoreHitboxes,
-    List<RaycastResult<ShapeHitbox>>? out,
-  }) {
+  List<RaycastResult<ShapeHitbox>> raycastAll(Vector2 origin,
+      {required int numberOfRays,
+      double startAngle = 0,
+      double sweepAngle = tau,
+      double? maxDistance,
+      List<Ray2>? rays,
+      bool Function(ShapeHitbox candidate)? hitboxFilter,
+      List<ShapeHitbox>? ignoreHitboxes,
+      List<RaycastResult<ShapeHitbox>>? out}) {
     final isFullCircle = (sweepAngle % tau).abs() < 0.0001;
     final angle = sweepAngle / (numberOfRays + (isFullCircle ? 0 : -1));
     final results = <RaycastResult<ShapeHitbox>>[];
@@ -153,12 +151,11 @@ class PuzzleCollisionDetection<B extends Broadphase<ShapeHitbox>>
   }
 
   @override
-  Iterable<RaycastResult<ShapeHitbox>> raytrace(
-    Ray2 ray, {
-    int maxDepth = 10,
-    List<ShapeHitbox>? ignoreHitboxes,
-    List<RaycastResult<ShapeHitbox>>? out,
-  }) sync* {
+  Iterable<RaycastResult<ShapeHitbox>> raytrace(Ray2 ray,
+      {int maxDepth = 10,
+      bool Function(ShapeHitbox candidate)? hitboxFilter,
+      List<ShapeHitbox>? ignoreHitboxes,
+      List<RaycastResult<ShapeHitbox>>? out}) sync* {
     out?.forEach((e) => e.reset());
     var currentRay = ray;
     for (var i = 0; i < maxDepth; i++) {
